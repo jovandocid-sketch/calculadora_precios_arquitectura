@@ -22,7 +22,10 @@ const RANGOS = {
 
 const TIPOS = Object.keys(RANGOS);
 
-function fUF(n) { return \`\${(Number(n)||0).toFixed(3)} UF\`; }
+function fUF(n) {
+  return `${(Number(n) || 0).toFixed(3)} UF`;
+}
+
 function fCLP(n) { return (Number(n)||0).toLocaleString("es-CL", { style:"currency", currency:"CLP", maximumFractionDigits:0 }); }
 
 export default function App() {
