@@ -90,7 +90,7 @@ export default function App() {
       <section style={{...grid, marginTop:12}}>
         <div>
           <label style={label}>Superficie (m²)</label>
-          <input type="number" value={m2} onChange={(e)=>setM2(Math.max(0, Number(e.target.value)))} style={input} />
+        <input type="number" value={m2} onChange={(e)=>setM2(Math.max(0, Number(e.target.value)))} style={inputNarrow} />
         </div>
         <div>
           <label style={label}>Valor UF (CLP)</label>
@@ -104,7 +104,7 @@ export default function App() {
         </div>
         <div>
           <label style={label}>Recargo (%)</label>
-          <input type="number" value={recargo} onChange={(e)=>setRecargo(Math.max(0, Number(e.target.value)))} style={input} />
+         <input type="number" value={recargo} onChange={(e)=>setRecargo(Math.max(0, Number(e.target.value)))} style={inputNarrow} />
           <div style={{ ...subtle, marginTop: 6 }}>Para encargos aislados u otras condiciones especiales.</div>
         </div>
       </section>
@@ -158,9 +158,14 @@ export default function App() {
         <p style={p}>Esta herramienta entrega rangos de referencia. La propuesta definitiva puede variar según complejidad, ubicación, normativa y alcance específico.</p>
       </section>
 
-      <section style={{ marginTop:18 }}>
-        <a href="mailto:contacto@jovandocid.com" style={btnSolid}>Solicitar cotización por correo</a>
-      </section>
+      <section style={{ display:"flex", gap:10, marginTop:18, flexWrap:"wrap" }}>
+  <a href="mailto:contacto@jovandocid.com" style={btnSolid}>
+    Solicitar cotización por correo
+  </a>
+  <button onClick={() => window.print()} style={btnGhost}>
+    Imprimir
+  </button>
+</section>
 
       <footer style={footer}>
         Desarrollado por <strong>J. Ovando Cid & Arquitectos</strong> · <strong>Do+Lab</strong>
@@ -178,6 +183,7 @@ const p  = { margin:"6px 0", color:"#333" };
 const panel = { border:"1px solid #eaeaea", borderRadius:14, padding:14, background:"#fff" };
 const grid  = { display:"grid", gap:14, gridTemplateColumns:"repeat(auto-fit, minmax(240px, 1fr))" };
 const input = { width:"100%", padding:"12px 14px", borderRadius:12, border:"1px solid #ccc", outline:"none", fontSize:16 };
+const inputNarrow = { ...input, maxWidth:320 };
 const label = { display:"block", fontWeight:600, marginBottom:6 };
 const subtle = { color:"#666", fontSize:13 };
 const card = { border:"1px solid #eaeaea", borderRadius:16, padding:16, background:"#fff", boxShadow:"0 1px 2px rgba(0,0,0,.04)" };
@@ -185,6 +191,11 @@ const chip = { fontSize:12, color:"#666", letterSpacing:1, textTransform:"upperc
 const ufTotal = { fontSize:22, fontWeight:800, marginBottom:2 };
 const clpTotal = { fontWeight:700, marginBottom:8, color:"#111" };
 const base = { fontSize:12, color:"#777" };
+const btnSolid = { display:"inline-block", padding:"12px 16px", borderRadius:12, background:"#111", color:"#fff", textDecoration:"none", fontWeight:700 };
+const btnGhost = { padding:"12px 14px", borderRadius:12, background:"#f3f4f6", border:"1px solid #e5e7eb", cursor:"pointer" };
+const ul = { margin:"6px 0 2px 0", paddingLeft: "20px" };
+const footer = { marginTop:28, color:"#666", fontSize:13, display:"flex", gap:6, flexWrap:"wrap" };
+
 const btnSolid = { display:"inline-block", padding:"12px 16px", borderRadius:12, background:"#111", color:"#fff", textDecoration:"none", fontWeight:700 };
 const btnGhost = { padding:"12px 14px", borderRadius:12, background:"#f3f4f6", border:"1px solid #e5e7eb", cursor:"pointer" };
 const ul = { margin:"6px 0 2px 0", paddingLeft: "20px" };
