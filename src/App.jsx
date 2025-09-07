@@ -74,7 +74,7 @@ export default function App() {
         <div style={logos}>
           <img src="/logos/joc.png" alt="J. Ovando Cid & Arquitectos" style={{ height: 100, objectFit:"contain" }} />
           <span style={{ color: "#999" }}>·</span>
-          <img src="/logos/dolab.png" alt="Do+Lab" style={{ height: 95, objectFit:"contain" }} />
+          <img src="/logos/dolab.png" alt="Do+Lab" style={{ height: 90, objectFit:"contain" }} />
         </div>
         <h1 style={h1}>Calculadora de Precios · UF/m² → UF & CLP</h1>
       </header>
